@@ -1,0 +1,93 @@
+body {
+    /* background-color: #f8f9fa; */
+    background-image: url("Home.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    font-family: 'Niramit', sans-serif;
+  }
+  
+  body.QT{
+    background-image: none;
+    background-color: black;
+  }
+  
+  body.Contact{
+    background-image: none;
+    background-color: rgb(66, 5, 5);
+  }
+  
+  body.Signin{
+    background-image: url("Signin.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .navbar {
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding-left: 20px !important;
+    margin-top: 5px !important;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid white;
+    padding-top: 10px;
+    margin: 0 auto;
+  }
+  
+  
+  .container {
+    margin-top: 0px;
+  }
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .navbar-brand {
+      margin-right: auto;
+      margin-left: 0;
+      font-weight: 600;
+    }
+    
+    .navbar-nav {
+      margin-top: 10px;
+    }
+  
+    .navbar-nav .nav-link {
+      background-color: rgb(255, 255, 255);
+      font-weight: 500;
+      font-size: medium;
+      color: black !important;
+      margin-top: 0% !important;
+    }
+    
+    .navbar-collapse {
+      border-top: 1px solid #fff;
+    }
+    
+    .navbar-toggler {
+      margin-top: 0px;
+      box-shadow: 0 0 0 0 !important;
+    }
+    
+    
+    .container {
+      margin-top: 0px;
+    }
+  
+  }
+  

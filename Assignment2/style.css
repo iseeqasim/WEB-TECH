@@ -1,7 +1,7 @@
 body {
   /* background-color: #f8f9fa; */
   background-image: url("Home.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 
   font-family: 'Niramit', sans-serif;
@@ -18,6 +18,12 @@ body.Contact{
 }
 
 body.Signin{
+  background-image: url("Signin.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.Signup{
   background-image: url("Signin.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,14 +53,110 @@ body.Signin{
   margin: auto;
 }
 
+.Headline{
+  padding-top: 8%;
+  text-align: left;
+}
+
+.Headline h1 {
+  padding-left: 300px;
+  width: 700px;
+  color: white;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.HL h1 {
+  width: 700px;
+  color: black;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.Signin .Headline{
+  padding-top: 10%;
+  text-align: left;
+}
+
+.Signin .Headline h1 {
+  padding-left: 300px;
+  width: 700px;
+  color: white;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.Signin .HL h1{
+  width: 700px;
+  color: white;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.Signup .Headline{
+  padding-top: 10%;
+  text-align: left;
+}
+
+.Signup .Headline h1 {
+  padding-left: 300px;
+  width: 750px;
+  color: white;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.Signup .HL h1{
+  width: 700px;
+  color: white;
+  font-family: 'Niramit';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+
 .container {
   margin-top: 0px;
 }
 
 
-.container-form {
+ .container-form {
   width: 30rem;
   height: 25rem;
+  background: rgba(17, 17, 17, 0.8);
+  box-shadow: inset 0px 0px 50px -4px rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Signup .container-form{
+  width: 30rem;
+  height: 38rem; 
   background: rgba(17, 17, 17, 0.8);
   box-shadow: inset 0px 0px 50px -4px rgba(255, 255, 255, 0.25);
   border-radius: 20px;
@@ -101,6 +203,112 @@ body.Signin{
   margin-top: 10px !important;
   margin-bottom: 0;
 }
+
+
+.movies {
+  margin-top: 20%;
+  background-color: #111111;
+}
+
+.now-showing {
+  text-align: center;
+}
+
+.now-showing h2{
+  color: white;
+  padding-bottom: 60px;
+  padding-top: 80px;
+}
+
+.nxt-change {
+  text-align: center;
+}
+
+.nxt-change h2{
+  color: white;
+  padding-bottom: 60px;
+  padding-top: 80px;
+}
+
+.coming-soon {
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+.coming-soon h2{
+  color: white;
+  padding-bottom: 60px;
+  padding-top: 80px;
+}
+
+ .movie-list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.2));
+}
+
+.movie-list ul::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-list ul li {
+  margin-right: 30px;
+  padding-left: 1%;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+
+.movie-list ul li img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}  
+
+.movie-list h3{
+  color: white;
+  font-weight: 200;
+  font-size: medium;
+  padding-top: 10%;
+}
+
+.movie-list ul li .rating{
+  color: white;
+  font-size: medium;
+}
+
+div.movie-list ul li .rating img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  margin-bottom: 2%;
+}
+
+
+
+
+footer {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 182px;
+  left: 0px;
+  top: 2900px;
+  background: #111111;
+  border-top: 1px solid #CDD5E0;
+  color: white;
+  text-align: center;
+  padding: 75px;
+}
+
 
 
 
@@ -155,4 +363,22 @@ body.Signin{
     transform: none;
   }
 
+  .Signup .container-form{
+    width: 60%;
+    height: auto;
+    position: static;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    transform: none;
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #CDD5E0;
+    }
 }

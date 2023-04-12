@@ -16,7 +16,7 @@
     <title>Signup</title>
     
   </head>
-  <body class="Signin">
+  <body class="Signup">
     <nav class="navbar navbar-expand-md">
       <div class="container">
         <a href="#" class="navbar-brand text-white fs-3">Cinetick</a>
@@ -47,6 +47,16 @@
     <div class="container-form">
       <form id="signinForm" class="needs-validation" novalidate>
         <div class="mb-3">
+          <label for="fname" class="form-label text-white">First Name</label>
+          <input type="fname" class="form-control" id="fname" name="fname" required>
+          <div class="invalid-feedback text-white">Please write your first name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label text-white">Last Name</label>
+          <input type="lname" class="form-control" id="lname" name="lname" required>
+          <div class="invalid-feedback text-white">Please write your last name.</div>
+        </div>
+        <div class="mb-3">
           <label for="email" class="form-label text-white">Email address</label>
           <input type="email" class="form-control" id="email" name="email" required>
           <div class="invalid-feedback text-white">Please provide a valid email address.</div>
@@ -60,6 +70,13 @@
         <button type="submit" class="btn btn-primary">Sign Up</button>
         <p class="text-white mt-3 mb-0">Already have an account? <a href="Sigin.html" class="text-decoration-none text-white">Sign In</a></p>
       </form>
+    </div>
+
+    <div class="Headline">
+      <h1>Say goodbye to long queues and last-minute </h1>
+      <div class="HL">
+        <h1> rushes with Cinetick </h1>
+      </div>
     </div>
     
     <script>

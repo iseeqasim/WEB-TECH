@@ -42,6 +42,97 @@
       </div>
     </nav>
 
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <select class="form-control" id="movieSelect">
+              <option value="">Select Movie</option>
+              <option value="Avatar: The Way of Water">Avatar: The Way of Water</option>
+              <option value="All Quiet on the Western Front">All Quiet on the Western Front</option>
+              <option value="Puss in Boots">Puss in Boots</option>
+              <option value="Django Unchained">Django Unchained</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <select class="form-control" id="movieSelect">
+              <option value="">Select Cinema</option>
+              <option value="Bahria Town">Bahria Town </option>
+              <option value="Packages Mall">Packages Mall </option>
+              <option value="Emporium Mall">Emporium Mall</option>
+              <option value="Fortress Mall">Fortress Mall</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <select class="form-control" id="movieSelect">
+              <option value="">Select Date</option>
+              <option value="01 May 2023">01 May 2023</option>
+              <option value="10 May 2023">10 May 2023</option>
+              <option value="20 May 2023">20 May 2023</option>
+              <option value="01 April 2023">01 April 2023</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <select class="form-control" id="movieSelect">
+              <option value="">Select Time</option>
+              <option value="3:00 PM">3:00 PM </option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="6:00 PM">6:00 PM</option>
+              <option value="7:00 PM">7:00 PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <select class="form-control" id="movieSelect">
+              <option value="">Tickets</option>
+              <option value="1">1 </option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script>
+      var movieSelect = document.getElementById("movieSelect");
+      movieSelect.addEventListener("change", function() {
+        var selectedMovie = movieSelect.options[movieSelect.selectedIndex].value;
+        alert("You selected: " + selectedMovie);
+      });
+    </script>
+
   
     
     <!-- Bootstrap Bundle with Popper -->

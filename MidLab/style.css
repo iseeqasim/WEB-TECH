@@ -1,0 +1,59 @@
+/* Set light green background */
+body {
+    background-color: #529527;
+  }
+  
+  /* Set styles for the navigation bar */
+  nav.navbar {
+    background-color: #3ee662;
+    font-weight: bold;
+  }
+  
+  nav.navbar a {
+    color: #000;
+  }
+  
+  nav.navbar .nav-item.active a {
+    color: #529527;
+  }
+  
+  /* Set styles for the main content section */
+  main {
+    margin-top: 80px;
+    padding: 30px;
+    color: #000000;
+  }
+  
+  main h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  main p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  main img {
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }
+  
+  /* Set styles for the "know more" buttons */
+  .btn-primary {
+    background-color: #fff;
+    color: #529527;
+    border-color: #529527;
+    font-weight: bold;
+  }
+  
+  .btn-primary:hover {
+    background-color: #529527;
+    color: #fff;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none;
+  }
+  

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="StyleContact.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
@@ -41,6 +41,44 @@
         </div>
       </div>
     </nav>
+
+
+    <div class="containerC">
+      <h1 class="contact-heading">Contact Us</h1>
+      <p class="contact-description">Please use this form to contact us with any questions or feedback.</p>
+      <form class="contact-form" action="contact.php" method="post">
+        <input class="contact-input" type="text" name="name" placeholder="Your Name">
+        <input class="contact-input" type="email" name="email" placeholder="Your Email">
+        <textarea class="contact-message" name="message" placeholder="Your Message"></textarea>
+        <div class="contact-submit-container">
+          <input class="contact-submit" type="submit" value="Submit" onclick="validateForm(event)">
+        </div>
+      </form>
+    </div>
+    
+
+    
+    <script>
+      function validateForm(event) {
+        event.preventDefault(); // Prevent form submission
+    
+        // Get the input fields
+        var nameInput = document.querySelector('input[name="name"]');
+        var emailInput = document.querySelector('input[name="email"]');
+        var messageInput = document.querySelector('textarea[name="message"]');
+    
+        // Check if any of the fields are empty
+        if (nameInput.value === '' || emailInput.value === '' || messageInput.value === '') {
+          alert('Please fill in all the fields.');
+        } else {
+          // Submit the form if all fields are filled
+          event.target.form.submit();
+        }
+      }
+    </script>
+    
+    
+
 
   
     

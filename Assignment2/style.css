@@ -12,6 +12,7 @@ body.QT{
   background-color: black;
 }
 
+
 body.Contact{
   background-image: none;
   background-color: rgb(66, 5, 5);
@@ -198,6 +199,10 @@ body.Signup{
   display: block;
 }
 
+.container-form button[type="submit"]:hover {
+  background-color: #86fab3;
+}
+
 .container-form p.text-white {
   text-align: center;
   margin-top: 10px !important;
@@ -292,6 +297,61 @@ div.movie-list ul li .rating img {
   margin-bottom: 2%;
 }
 
+
+
+
+
+.containers {
+  margin-top: 4% !important;
+}
+
+.containerr {
+  align-items: center;
+  position: relative;
+  width: 50rem;
+  left: 30%;
+  margin-bottom: -10px;
+}
+
+select.form-control {
+  height: 45px;
+}
+
+.containerrr {
+  align-items: center;
+  position: relative;
+  width: 50rem;
+  left: 36%;
+}
+
+button.btn-primary {
+  background-color: white;
+  color: black;
+  height: 45px;
+  width: 10rem;
+  margin-top: 20px;
+}
+
+button.btn-primary:hover {
+  background-color: #d35353;
+}
+
+
+.containerQ {
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 4%;
+}
+
+
+.contact-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
 
 
 

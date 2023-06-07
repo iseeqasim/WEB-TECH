@@ -12,6 +12,11 @@ body.QT{
   background-color: black;
 }
 
+body.TicketsManage{
+  background-image: none;
+  background-color: black;
+}
+
 
 body.Contact{
   background-image: none;
@@ -369,6 +374,15 @@ footer {
   padding: 75px;
 }
 
+.admin {
+  margin-top: 4px;
+}
+
+.admin a {
+  color: rgb(218, 219, 142);
+  text-decoration: none;
+  font-weight: 600;
+}
 
 
 

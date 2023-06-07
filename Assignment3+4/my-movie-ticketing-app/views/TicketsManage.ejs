@@ -91,38 +91,38 @@
     <div class="containerr">
       <h1>Ticket CRUD Operations</h1>
 
-      <form action="/tickets" method="GET">
+      <form action="/api/tickets" method="GET">
         <button type="submit">All Tickets</button>
       </form>
       
-      <form action="/tickets" method="POST">
+      <form action="/api/tickets" method="POST">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <input type="text" name="movie" placeholder="Movie" required>
         <input type="text" name="cinema" placeholder="Cinema" required>
         <input type="date" name="date" required>
         <input type="time" name="time" required>
-        <input type="number" name="tickets" placeholder="Number of Tickets" required>
+        <input type="integer" name="tickets" placeholder="Number of Tickets" required>
         <button type="submit">Add Ticket</button>
       </form>
       
-      <form action="/tickets/id" method="POST">
+      <form action="/api/tickets/id" method="POST">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <button type="submit">Find Ticket</button>
       </form>
       
       
-      <form action="/tickets/upd" method="POST">
+      <form action="/api/tickets/upd" method="POST">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <input type="time" name="time" required>
-        <input type="number" name="tickets" placeholder="New Number of Tickets" required>
+        <input type="integer" name="tickets" placeholder="New Number of Tickets" required>
         <button type="submit">Modify Ticket</button>
       </form>
       
-      <form action="/tickets/del" method="POST">
+      <form action="/api/tickets/del" method="POST">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <button type="submit">Delete Ticket</button>
       </form>
-      
+     
       
   
     <!-- Bootstrap Bundle with Popper -->

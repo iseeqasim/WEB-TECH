@@ -20,9 +20,10 @@ router.post('/tickets', (req, res) => {
     tickets
   });
 
+
   newTicket.save()
     .then(savedTicket => {
-      res.redirect('/TicketsManage');
+      res.redirect('/map'); // Redirect to the map.ejs page //PRG
       // const response = {
       //   message: 'Ticket added successfully',
       //   ticket: savedTicket
@@ -41,12 +42,13 @@ router.post('/tickets', (req, res) => {
 router.get('/tickets', (req, res) => {
   Ticket.find()
     .then(tickets => {
-      const response = {
-        ticket: tickets
-      };
-      const formattedResponse = JSON.stringify(response, null, 1);
-      res.setHeader('Content-Type', 'application/json');
-      res.send(formattedResponse);
+      res.render('map', { tickets: tickets }); 
+      // const response = {
+      //   ticket: tickets
+      // };
+      // const formattedResponse = JSON.stringify(response, null, 1);
+      // res.setHeader('Content-Type', 'application/json');
+      // res.send(formattedResponse);
     })
     .catch(error => {
       res.status(500).json({ error: 'Error retrieving tickets' });
@@ -74,6 +76,9 @@ router.post('/tickets/id', (req, res) => {
       res.status(500).json({ error: 'Error retrieving ticket' });
     });
 });
+
+
+
 
 // Update a ticket by ID
 router.post('/tickets/upd', (req, res) => {

@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Ticket = require('./models/Ticket');
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,16 @@ app.set('view engine', 'ejs');
 // Serve static files from the 'public' folder
 app.use(express.static('public'));
 
+//PRG
+app.get('/map', (req, res) => {
+  Ticket.find()
+    .then(tickets => {
+      res.render('map', { tickets: tickets });
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'Error retrieving tickets' });
+    });
+});
 
 
 
@@ -43,6 +54,8 @@ app.use('/Signin', signInRouter);
 app.use('/Signup', signUpRouter);
 app.use('/TicketsManage', TicketsUpRouter);
 app.use('/api', apiRouter);
+
+
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

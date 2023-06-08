@@ -45,15 +45,15 @@
 
 
     <div class="container-form">
-      <form id="signinForm" class="needs-validation" novalidate>
+      <form id="signupForm" class="needs-validation" novalidate method="POST">
         <div class="mb-3">
           <label for="fname" class="form-label text-white">First Name</label>
-          <input type="fname" class="form-control" id="fname" name="fname" required>
+          <input type="text" class="form-control" id="fname" name="fname" required>
           <div class="invalid-feedback text-white">Please write your first name.</div>
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label text-white">Last Name</label>
-          <input type="lname" class="form-control" id="lname" name="lname" required>
+          <input type="text" class="form-control" id="lname" name="lname" required>
           <div class="invalid-feedback text-white">Please write your last name.</div>
         </div>
         <div class="mb-3">
@@ -65,12 +65,13 @@
           <label for="password" class="form-label text-white">Password</label>
           <input type="password" class="form-control" id="password" name="password" required>
           <div class="invalid-feedback text-white">Please provide a password.</div>
-          <a href="#" class=" fpassword text-white d-block mt-2">Forget Password?</a>
+          <a href="#" class="fpassword text-white d-block mt-2">Forget Password?</a>
         </div>
         <button type="submit" class="btn btn-primary">Sign Up</button>
-        <p class="text-white mt-3 mb-0">Already have an account? <a href="Signin" class="text-decoration-none text-white">Sign In</a></p>
+        <p class="text-white mt-3 mb-0">Already have an account? <a href="/signin" class="text-decoration-none text-white">Sign In</a></p>
       </form>
     </div>
+    
 
     <div class="Headline">
       <h1>Say goodbye to long queues and last-minute </h1>
@@ -80,17 +81,16 @@
     </div>
     
     <script>
-      const form = document.getElementById('signinForm');
-
+      const form = document.getElementById('signupForm');
+    
       form.addEventListener('submit', function(event) {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
         }
-
+    
         form.classList.add('was-validated');
       });
-
     </script>
     
     

@@ -43,7 +43,7 @@
     </nav>
 
     <div class="container-form">
-      <form id="signinForm" class="needs-validation" novalidate>
+      <form id="signinForm" class="needs-validation" novalidate action="/signin" method="POST">
         <div class="mb-3">
           <label for="email" class="form-label text-white">Email address</label>
           <input type="email" class="form-control" id="email" name="email" required>
@@ -53,12 +53,13 @@
           <label for="password" class="form-label text-white">Password</label>
           <input type="password" class="form-control" id="password" name="password" required>
           <div class="invalid-feedback text-white">Please provide a password.</div>
-          <a href="#" class=" fpassword text-white d-block mt-2">Forget Password?</a>
+          <a href="#" class="fpassword text-white d-block mt-2">Forget Password?</a>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-        <p class="text-white mt-3 mb-0">Already have an account? <a href="Signup" class="text-decoration-none text-white">Sign Up</a></p>
+        <p class="text-white mt-3 mb-0">Already have an account? <a href="/signup" class="text-decoration-none text-white">Sign Up</a></p>
       </form>
     </div>
+    
 
     <div class="Headline">
       <h1>Find and book your next </h1>
@@ -69,21 +70,20 @@
     
     <script>
       const form = document.getElementById('signinForm');
-
+    
       form.addEventListener('submit', function(event) {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
         }
-
+    
         form.classList.add('was-validated');
       });
-
     </script>
-
-
-
     
+
+
+
   
     
     <!-- Bootstrap Bundle with Popper -->

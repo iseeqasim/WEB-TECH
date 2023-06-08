@@ -1,0 +1,99 @@
+body.Contact{
+    background-image: none;
+    background-color: rgb(66, 5, 5);
+  }
+
+
+  .navbar {
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding-left: 20px !important;
+    margin-top: 5px !important;
+  }
+  
+  .nav-link.active::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid white;
+    padding-top: 3px;
+    margin: auto;
+  }
+
+
+
+
+
+
+
+  .containerC {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 4%;
+  }
+
+
+  .contact-heading {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    padding-bottom: 10%;
+  }
+  
+  .contact-description {
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    align-content: center;
+  }
+  
+  .contact-input,
+  .contact-message {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5%;
+  }
+  
+  .contact-submit-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+  }
+  
+  .contact-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 25%;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contact-submit:hover {
+    background-color: #e9f392;
+  }
+  

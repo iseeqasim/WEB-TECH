@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <title>Tickets</title>
+    
+    <style>
+      
+      .containerr {
+      margin-top: 3%;
+      margin-bottom: 5%;
+      margin-left: 10%;
+      width: 400px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .containerr h1 {
+      text-align: center;
+      color: #ffffff;
+      font-weight: bold;
+      padding-bottom: 10%;
+    }
+
+    .containerr form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .containerr input,
+    .containerr button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .containerr button {
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .containerr button:hover {
+      background-color: #45a049;
+    }
+      
+    </style>
+  </head>
+  <body class="QT">
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <a href="#" class="navbar-brand text-white fs-3">Cinetick</a>
+        <button class="navbar-toggler text-white fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <i class='bx bx-menu '></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="Home" class="nav-link text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white active">Tickets Manage</a>
+            </li>
+            <li class="nav-item">
+              <a href="Contact" class="nav-link text-white">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="Signin" class="nav-link text-white">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="containerr">
+      <h1>Ticket CRUD Operations</h1>
+
+      <form action="/api/tickets" method="GET">
+        <button type="submit">All Tickets</button>
+      </form>
+      
+      <form action="/api/tickets" method="POST">
+        <input type="text" name="ticketId" placeholder="Ticket ID" required>
+        <input type="text" name="movie" placeholder="Movie" required>
+        <input type="text" name="cinema" placeholder="Cinema" required>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+        <input type="integer" name="tickets" placeholder="Number of Tickets" required>
+        <button type="submit">Add Ticket</button>
+      </form>
+      
+      <form action="/api/tickets/id" method="POST">
+        <input type="text" name="ticketId" placeholder="Ticket ID" required>
+        <button type="submit">Find Ticket</button>
+      </form>
+      
+      
+      <form action="/api/tickets/upd" method="POST">
+        <input type="text" name="ticketId" placeholder="Ticket ID" required>
+        <input type="time" name="time" required>
+        <input type="integer" name="tickets" placeholder="New Number of Tickets" required>
+        <button type="submit">Modify Ticket</button>
+      </form>
+      
+      <form action="/api/tickets/del" method="POST">
+        <input type="text" name="ticketId" placeholder="Ticket ID" required>
+        <button type="submit">Delete Ticket</button>
+      </form>
+
+           
+  
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

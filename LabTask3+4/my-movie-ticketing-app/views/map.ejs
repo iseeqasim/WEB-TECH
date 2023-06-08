@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map</title>
+  <style>
+    body {
+      background-color: #212121;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      color: #ffc107;
+      margin-top: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #444;
+      margin-top: 20px;
+    }
+    th {
+      background-color: #ffc107;
+      color: #212121;
+      padding: 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+    td {
+      background-color: #424242;
+      color: #fff;
+      padding: 10px;
+    }
+    tr:hover {
+      background-color: #616161;
+    }
+  </style>
+</head>
+<body>
+  <h2>Cinetick Record</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Movie</th>
+        <th>Cinema</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Tickets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < tickets.length; i++) { %>
+        <tr>
+          <td><%= tickets[i].ticketId %></td>
+          <td><%= tickets[i].movie %></td>
+          <td><%= tickets[i].cinema %></td>
+          <td><%= tickets[i].date %></td>
+          <td><%= tickets[i].time %></td>
+          <td><%= tickets[i].tickets %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

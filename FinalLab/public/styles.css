@@ -1,0 +1,77 @@
+body {
+  background-image: url('/Images/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: rgba(24, 63, 78, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input[type="text"] {
+  width: 340px;
+  padding: 8px;
+  border: 1px solid #f1f093;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+  display: block; 
+  margin: 0 auto;
+  background-color: #8d8b06;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #b93c2c;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+#vehicle-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#vehicle-list li {
+  background-color: #2b4f52;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+}

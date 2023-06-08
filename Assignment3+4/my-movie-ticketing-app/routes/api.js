@@ -62,12 +62,13 @@ router.post('/tickets/id', (req, res) => {
   Ticket.findOne({ ticketId: ticketId }) // Use 'ticketId' in the query
     .then(ticket => {
       if (ticket) {
-        const response = {
-          ticket: ticket
-        };
-        const formattedResponse = JSON.stringify(response, null, 1);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(formattedResponse);
+        res.render('map', { tickets: [ticket] }); 
+        // const response = {
+        //   ticket: ticket
+        // };
+        // const formattedResponse = JSON.stringify(response, null, 1);
+        // res.setHeader('Content-Type', 'application/json');
+        // res.send(formattedResponse);
       } else {
         res.status(404).json({ error: 'Ticket not found' });
       }
@@ -103,6 +104,9 @@ router.post('/tickets/upd', (req, res) => {
       res.status(500).json({ error: 'Error updating ticket' });
     });
 });
+
+
+
 
 // Delete a ticket by ID
 router.post('/tickets/del', (req, res) => {

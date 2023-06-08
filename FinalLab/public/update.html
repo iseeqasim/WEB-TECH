@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modify Record</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <script>
+    $(document).ready(() => {
+      // Update button click event
+      $(document).on('click', '.update-btn', function () {
+        const vehicleId = $(this).data('id');
+        // Retrieve the updated form data
+        const registration_number = $('#registration_number').val();
+        const make = $('#make').val();
+        const model = $('#model').val();
+        const color = $('#color').val();
+
+        // Send the update request
+        $.ajax({
+          url: `/api/vehicles/${vehicleId}`,
+          method: 'PUT',
+          contentType: 'application/json',
+          data: JSON.stringify({ registration_number, make, model, color }),
+          success: () => {
+            fetchVehicles();
+          },
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Vehicle Details</h1>
+
+    <form>
+      <label for="registration_number">Registration Number:</label>
+      <input type="text" id="registration_number" required><br>
+
+      <label for="make">Make:</label>
+      <input type="text" id="make" required><br>
+
+      <label for="model">Model:</label>
+      <input type="text" id="model" required><br>
+
+      <label for="color">Color:</label>
+      <input type="text" id="color" required><br>
+
+      <button type="submit">Modify</button>
+    </form>
+  </div>
+</body>
+</html>

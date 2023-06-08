@@ -1,0 +1,62 @@
+const express = require('express');
+const router = express.Router();
+const Vehicle = require('../models/vehicle');
+
+router.get('/', (req, res) => {
+  Vehicle.find()
+    .exec()
+    .then((vehicles) => {
+      res.json(vehicles);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'An error occurred while fetching the vehicles' });
+    });
+});
+
+router.post('/', (req, res) => {
+  const { registration_number, make, model, color } = req.body;
+  const vehicle = new Vehicle({ registration_number, make, model, color });
+  vehicle
+    .save()
+    .then((savedVehicle) => {
+      res.status(201).json(savedVehicle);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'An error occurred while saving the vehicle record' });
+    });
+});
+
+router.put('/:id', (req, res) => {
+  const vehicleId = req.params.id;
+  const { registration_number, make, model, color } = req.body;
+  Vehicle.findByIdAndUpdate(vehicleId, { title, permissions, description }, { new: true })
+      .then((role) => {
+          if (role) {
+              res.json(role);
+          } else {
+              res.status(404).json({ message: 'Vehicle not found' });
+          }
+      })
+      .catch((error) => {
+          res.status(500).json({ message: 'Error updating' });
+      });
+});
+
+router.delete('/:id', (req, res) => {
+  const vehicleId = req.params.id;
+  Vehicle.findByIdAndDelete(vehicleId)
+      .then((role) => {
+          if (role) {
+              res.sendStatus(204);
+          } else {
+              res.status(404).json({ message: 'Vehicle not found' });
+          }
+      })
+      .catch((error) => {
+          res.status(500).json({ message: 'Error deleting' });
+      });
+});
+
+
+
+module.exports = router;

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle List</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <script>
+    $(document).ready(() => {
+      // Fetch and display function
+      const fetchVehicles = () => {
+        $.ajax({
+          url: '/api/vehicles',
+          method: 'GET',
+          contentType: 'application/json',
+          success: (data) => {
+            $('#vehicle-list').empty();
+            data.forEach((vehicle) => {
+              const listItem = `
+                <li>
+                  <span>${vehicle.make} ${vehicle.model} - ${vehicle.registration_number}</span>
+                  <button class="update-btn" data-id="${vehicle._id}">Modify</button>
+                  <button class="delete-btn" data-id="${vehicle._id}">Delete</button>
+                </li>
+              `;
+              $('#vehicle-list').append(listItem);
+            });
+          },
+        });
+      };
+
+      fetchVehicles();
+
+      // Form submission
+      $('form').submit((event) => {
+        event.preventDefault();
+
+        // Retrieve form data
+        const registration_number = $('#registration_number').val();
+        const make = $('#make').val();
+        const model = $('#model').val();
+        const color = $('#color').val();
+
+        // Create a new vehicle record
+        $.ajax({
+          url: '/api/vehicles',
+          method: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({ registration_number, make, model, color }),
+          success: () => {
+            fetchVehicles();
+            $('form').trigger('reset');
+          },
+        });
+      });
+
+     // Delete button click event
+     $(document).on('click', '.delete-btn', function () {
+        const vehicleId = $(this).data('id');
+        $.ajax({
+          url: `/api/vehicles/${vehicleId}`,
+          method: 'DELETE',
+          success: () => {
+            fetchVehicles();
+          },
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Vehicle Details</h1>
+
+    <form>
+      <label for="registration_number">Registration Number:</label>
+      <input type="text" id="registration_number" required><br>
+
+      <label for="make">Make:</label>
+      <input type="text" id="make" required><br>
+
+      <label for="model">Model:</label>
+      <input type="text" id="model" required><br>
+
+      <label for="color">Color:</label>
+      <input type="text" id="color" required><br>
+
+      <button type="submit">Add Vehicle</button>
+    </form>
+
+    <h2>Existing Vehicles:</h2>
+    <ul id="vehicle-list"></ul>
+  </div>
+</body>
+</html>

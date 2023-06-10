@@ -110,17 +110,68 @@
         <button type="submit">Find Ticket</button>
       </form>
       
-      <form action="/api/tickets/upd" method="POST">
+      <form id="modifyForm">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <input type="time" name="time" required>
-        <input type="integer" name="tickets" placeholder="New Number of Tickets" required>
+        <input type="number" name="tickets" placeholder="New Number of Tickets" required>
         <button type="submit">Modify Ticket</button>
       </form>
+
       
       <form action="/api/tickets/del" method="POST">
         <input type="text" name="ticketId" placeholder="Ticket ID" required>
         <button type="submit">Delete Ticket</button>
       </form>
+
+
+
+      <script>
+        document.getElementById('modifyForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+      
+          const form = document.getElementById('modifyForm');
+          const formData = new FormData(form);
+      
+          const ticketId = formData.get('ticketId');
+          const time = formData.get('time');
+          const tickets = formData.get('tickets');
+      
+          fetch(`http://localhost:3000/api/tickets/${ticketId}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ time, tickets })
+          })
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Error updating ticket');
+            }
+          })
+          .then(data => {
+            if (data.redirectUrl) {
+              window.location.href = data.redirectUrl; // Redirect to the specified URL
+            } else {
+              console.log('Ticket updated successfully');
+              // Optionally, you can perform some actions here after successful update
+            }
+          })
+          .catch(error => {
+            console.error('Error modifying ticket:', error);
+            displayErrorMessage('Ticket not found');
+          });
+      
+          function displayErrorMessage(message) {
+            alert(message);
+          }
+        });
+      </script>
+      
+      
+      
+      
 
            
   

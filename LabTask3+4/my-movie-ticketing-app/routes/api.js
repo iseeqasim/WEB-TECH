@@ -58,26 +58,44 @@ router.post('/tickets/id', (req, res) => {
 });
 
 
-// Update a ticket by ID
-router.post('/tickets/upd', (req, res) => {
-  const { ticketId } = req.body;
-  const { time, tickets } = req.body;
-
-  Ticket.findOneAndUpdate({ ticketId: ticketId }, { time, tickets }, { new: true })
-    .then(updatedTicket => {
-      if (updatedTicket) {
-        res.render('map', { tickets: [updatedTicket] }); 
+// Delete a ticket by ID
+router.delete('/tickets/:ticketId', (req, res) => {
+  const { ticketId } = req.params;
+  Ticket.findOneAndDelete({ ticketId: ticketId })
+    .then(deletedTicket => {
+      if (deletedTicket) {
+        res.status(200).json({ message: 'Ticket deleted successfully' });
       } else {
         res.status(404).json({ error: 'Ticket not found' });
       }
     })
     .catch(error => {
-      res.status(500).json({ error: 'Error updating ticket' });
+      res.status(500).json({ error: 'Error deleting ticket' });
     });
 });
 
 
-// Delete a ticket by ID
+// Update a ticket by ID
+router.put('/tickets/:ticketId', (req, res) => {
+  const { ticketId } = req.params;
+  const { time, tickets } = req.body;
+  Ticket.findOneAndUpdate({ ticketId: ticketId }, { time, tickets }, { new: true, runValidators: true })
+    .then(updatedTicket => {
+      if (updatedTicket) {
+        res.json({ redirectUrl: '/map' });
+      } else {
+        res.status(404).json({ error: 'Ticket not found' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'Error modifying ticket' });
+    });
+});
+
+
+
+
+// User Delete
 router.post('/tickets/del', (req, res) => {
   const { ticketId } = req.body;
   Ticket.findOneAndDelete({ ticketId: ticketId })
@@ -92,5 +110,13 @@ router.post('/tickets/del', (req, res) => {
       res.status(500).json({ error: 'Error deleting ticket' });
     });
 });
+
+
+
+
+
+
+
+
 
 module.exports = router;

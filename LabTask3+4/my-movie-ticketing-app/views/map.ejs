@@ -36,6 +36,7 @@
     tr:hover {
       background-color: #616161;
     }
+
   </style>
 </head>
 <body>
@@ -49,6 +50,7 @@
         <th>Date</th>
         <th>Time</th>
         <th>Tickets</th>
+        <th>Action</th> <!-- Added column for delete button -->
       </tr>
     </thead>
     <tbody>
@@ -60,9 +62,31 @@
           <td><%= tickets[i].date %></td>
           <td><%= tickets[i].time %></td>
           <td><%= tickets[i].tickets %></td>
+          <td>
+            <button onclick="deleteTicket('<%= tickets[i].ticketId %>')">Delete</button> <!-- Added delete button with onclick event -->
+          </td>
         </tr>
       <% } %>
     </tbody>
   </table>
+
+  <script>
+    function deleteTicket(ticketId) {
+      fetch(`http://localhost:3000/api/tickets/${ticketId}`, {
+        method: 'DELETE'
+      })
+      .then(response => {
+        if (response.ok) {
+          // Reload the page after successful deletion
+          location.reload();
+        } else {
+          throw new Error('Error deleting ticket');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+  </script>
 </body>
 </html>
